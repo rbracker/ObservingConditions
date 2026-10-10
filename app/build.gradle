@@ -9,6 +9,7 @@ plugins {
     // Apply the application plugin to add support for building a CLI application in Java.
     id 'application'
 }
+test {testLogging { showStandardStreams = true }}
 
 repositories {
     // Use Maven Central for resolving dependencies.
@@ -17,7 +18,9 @@ repositories {
 
 dependencies {
     // Use JUnit Jupiter for testing.
-    testImplementation libs.junit.jupiter
+    implementation libs.junit.jupiter
+    implementation 'org.seleniumhq.selenium:selenium-java:4.41.0'
+    implementation 'io.github.bonigarcia:webdrivermanager:6.3.4'
 
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 
